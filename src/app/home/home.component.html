@@ -1,0 +1,35 @@
+<div class="d-flex border border-light">
+ <div style="width: 200px;height: 90vh;" class="sidebar bg-info p-4 d-flex flex-column">
+<a routerLink="home">Home</a>
+<a routerLink="/users">Users</a>
+<button (click)="logout()" class="btn mt-auto text-light fw-bolder">Logout<i class="fa-solid fa-right-from-bracket me-2"></i></button>
+ </div>
+ <div class="dashboard p-4 w-100">
+   <div class="row">
+      <div class="col-lg-8">
+         <div style="height: 150px; background-image: url(https://cdn.pixabay.com/photo/2015/09/17/10/30/banner-943866_640.jpg);background-size: cover;" class="admin-panel border rounded align-items-center ">
+            <h1 class="mt-4 ms-3 text-primary">Welcome <span>{{adminName}}</span></h1>
+         </div>
+         <div class="d-flex mt-3">
+            <div style="height: 400px;" class="col-lg-5 border rounded">
+               <app-calender></app-calender>
+            </div>
+            <div  class="col-lg-1"></div>
+         
+         <div style="height: 400px;" class=" col-lg-6 border rounded mt-2">
+            <app-chart></app-chart> 
+         </div>
+      </div>
+      </div>
+      <div class="col-lg-4">
+         <div style="height: 350px;" class="admin-details border rounded p-2">
+          <app-edit-admin (onUpdate)="updateAdminName($event)"></app-edit-admin>
+         </div>
+         <div style="height: 200px; background-image: url(https://t4.ftcdn.net/jpg/04/07/17/41/360_F_407174101_AZ7ai4d43l24UYSajGjDdY8WMu7tESYE.jpg);background-size: cover;" class="random-user mt-2 border rounded p-2 text-light">
+           <i class="fa-users fa-solid me-2"></i>Employees: <span class="ms-2 ">{{totalUserCount}}</span>
+         </div>
+      </div>
+
+   </div>
+ </div>
+</div>

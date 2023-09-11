@@ -1,0 +1,51 @@
+<div class="d-flex border border-light">
+    <div style="width: 200px;height: 90vh;" class="sidebar bg-info p-4 d-flex flex-column">
+   <a routerLink="/home">Home</a>
+   <a routerLink="/users">Users</a>
+   
+    </div>
+    <div class="dashboard p-4 w-100">
+     <div class="title">
+      <h1>Add New User</h1>
+     </div>
+     <div class="user-details mt-5 shadow border rounded p-3 w-50 ">
+      <form #addUserForm="ngForm">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInputid" placeholder="user id" name="id" #id="ngModel" [(ngModel)]="user.id" pattern="[0-9]*" required>
+          <label for="floatingInputid">User Id</label>
+        </div>
+        <!-- invalid id -->
+        <div *ngIf="id.invalid && id.touched" class="mb-3 text-danger">*Invalid Id</div>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInputname" placeholder="user name" name="name" #name="ngModel" [(ngModel)]="user.name" pattern="[a-zA-Z]*" required>
+          <label for="floatingInputname">User Name</label>
+        </div>
+        <div *ngIf="name.invalid && name.touched" class="mb-3 text-danger">*Invalid username</div>
+
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInputemail" placeholder="name@example.com" name="email" #email="ngModel" [(ngModel)]="user.email" email required>
+          <label for="floatingInputemail">Email address</label>
+        </div>
+        <div *ngIf="email.invalid && email.touched" class="mb-3 text-danger">*Invalid email</div>
+
+        <div class="form-floating mb-3">
+          <select id="floatingInputstatus" class="form-control" name="active" #active="ngModel" [(ngModel)]="user.active"  required>
+            <option disabled selected hidden value=""></option>
+            <option value="1">Active</option>
+            <option value="0">InActive</option>
+
+          </select>
+          <label for="floatingInputstatus">Status</label>
+        </div>
+          <!-- invalid id -->
+          <div *ngIf="active.invalid && active.touched" class="mb-3 text-danger">*Invalid status</div>
+
+        <div>
+          <button (click)="cancel()" class="btn btn-warning ">Cancel</button>
+          <button [disabled]="addUserForm.invalid" (click)="addUser()"  class="btn btn-success ms-5">save</button>
+        </div>
+      </form>
+     </div>
+    </div>
+   </div>

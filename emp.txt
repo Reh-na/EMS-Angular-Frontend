@@ -1,0 +1,21 @@
+employee portal
+
+
+features:
+     -login page:
+     -home page:(admin dashboard):chart ,graph iclude
+     -user list page
+         -table in configurations  
+           -(name ,...)
+    -edit and add page
+   -user edit page: same as add page
+components: 5 components
+Modules:2 Modules 
+    -app module:login page, home page
+    -userModule:user list componemt,users add and edit page
+set up for each component
+design the components
+creating JSON server for employee portal(beacuse not avilable json file in our project so we create own json file)
+   -create a seperate folder for server
+steps to request login to server
+create angular service to make api call in front end
